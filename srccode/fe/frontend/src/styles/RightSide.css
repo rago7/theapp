@@ -1,0 +1,10 @@
+.right-side {
+    background-color: #f1f3f5;
+    padding: 20px;
+    height: 100vh;
+  }
+  .chats-section,
+  .notifications-section {
+    margin-bottom: 20px;
+  }
+  
