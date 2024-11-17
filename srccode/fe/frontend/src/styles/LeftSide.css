@@ -1,0 +1,13 @@
+.left-side {
+    background-color: #f1f3f5;
+    padding: 20px;
+    height: 100vh;
+  }
+  .info-section {
+    margin-bottom: 20px;
+  }
+  .additional-section {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+  }
+  
