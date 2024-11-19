@@ -10,6 +10,7 @@
     border-top: 1px solid #ccc;
     padding-top: 20px;
   }
+<<<<<<< HEAD
   
   .left-side {
     overflow-y: auto; /* Enable scrolling */
@@ -35,4 +36,6 @@
   .left-side:hover::-webkit-scrollbar-thumb {
     background: #555; /* Darker scrollbar on hover */
   }
+=======
+>>>>>>> 84eee390415d3ed9c4b01a9ccf9a5e13880815df
   
