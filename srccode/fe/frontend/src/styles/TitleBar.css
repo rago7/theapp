@@ -1,16 +1,126 @@
+/* Title Bar Container */
 .title-bar {
-    background-color: #f8f9fa;
-    padding: 10px 20px;
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Top Section: Logo, Middle Content, Menu/Profile */
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Responsive Adjustments for Screen Width < 660px */
+@media (max-width: 660px) {
+  .top-section {
+    flex-direction: row; /* Align everything in one row */
+    justify-content: space-between; /* Logo + Search on the left, Menu on the right */
   }
-  .logo {
-    font-size: 20px;
-    font-weight: bold;
+
+  /* Align Logo and Search Bar on the Left */
+  .logo, .search-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Push to the left */
   }
-  .search-bar input {
-    margin-right: 5px;
-  }
-  .nav-links button,
-  .profile-menu button {
+
+  /* Adjust Search Bar Width for Smaller Screens */
+  .search-bar {
+    width: 60%; /* Narrower search bar on smaller screens */
     margin-left: 10px;
   }
-  
+
+  /* Keep Menu Button on the Right */
+  .menu-profile {
+    flex: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* Logo Section */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Search Section */
+.search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between search elements */
+  margin-bottom: 10px; /* Space between search and nav section */
+}
+
+.search-bar {
+  width: 300px; /* Fixed width for the search bar */
+}
+
+.search-icon,
+.search-filter {
+  flex-shrink: 0;
+}
+
+/* Navigation Section */
+.nav-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between nav buttons */
+}
+
+.nav-section button {
+  position: relative; /* Needed for the vertical line */
+  padding-right: 10px; /* Add space to the right of the button for the line */
+}
+
+/* Add the vertical line to all buttons except the last one */
+.nav-section button:not(:last-child)::after {
+  content: ""; /* Empty content to create the line */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px; /* Thickness of the line */
+  height: 100%; /* Full height of the button */
+  background-color: #ccc; /* Color of the line */
+}
+
+/* Menu and Profile Section */
+.menu-profile {
+  display: flex;
+  gap: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .top-section {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center;
+  }
+
+  .search-section {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .search-bar {
+    width: 80%; /* Adjust search bar width for smaller screens */
+  }
+
+  .nav-section {
+    flex-wrap: wrap; /* Allow navigation buttons to wrap */
+    gap: 10px;
+  }
+}

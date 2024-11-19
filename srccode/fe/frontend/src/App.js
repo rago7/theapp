@@ -3,15 +3,22 @@ import TitleBar from "./components/TitleBar";
 import LeftSide from "./components/LeftSide";
 import Middle from "./components/Middle";
 import RightSide from "./components/RightSide";
+import "./App.css";
 
 const App = () => {
   return (
     <div>
       <TitleBar />
-      <div className="d-flex">
-        <div className="col-2"><LeftSide /></div>
-        <div className="col-8"><Middle /></div>
-        <div className="col-2"><RightSide /></div>
+      <div className="content">
+        <div className="left-side">
+          <LeftSide />
+        </div>
+        <div className="middle">
+          <Middle />
+        </div>
+        <div className="right-side">
+          <RightSide />
+        </div>
       </div>
     </div>
   );
