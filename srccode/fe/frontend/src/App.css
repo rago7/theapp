@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevent unwanted scrollbars */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Content Container */
+.content {
+  display: flex; /* Use flexbox for Left, Middle, and Right alignment */
+  margin-top: 90px; /* Same as the height of the Title Bar */
+  height: calc(100vh - 70px); /* Full height minus Title Bar height */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Left Side */
+.left-side {
+  flex: 2; /* Adjust the width ratio for the Left Side */
+  background-color: #f8f9fa; /* Optional: Add background color */
+  overflow-y: auto; /* Scroll if content exceeds height */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Middle Section */
+.middle {
+  flex: 6; /* Adjust the width ratio for the Middle Section */
+  background-color: #f8f9fa; /* Optional: Add background color */
+  overflow-y: auto; /* Scroll if content exceeds height */
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Right Side */
+.right-side {
+  flex: 2; /* Adjust the width ratio for the Right Side */
+  background-color: #f8f9fa; /* Optional: Add background color */
+  overflow-y: auto; /* Scroll if content exceeds height */
 }

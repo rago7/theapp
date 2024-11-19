@@ -11,3 +11,28 @@
     padding-top: 20px;
   }
   
+  .left-side {
+    overflow-y: auto; /* Enable scrolling */
+  }
+  
+  .left-side::-webkit-scrollbar {
+    width: 0; /* Hide scrollbar by default */
+  }
+  
+  .left-side:hover::-webkit-scrollbar {
+    width: 8px; /* Show scrollbar on hover */
+  }
+  
+  .left-side::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Scrollbar track background */
+  }
+  
+  .left-side::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar thumb color */
+    border-radius: 4px; /* Rounded scrollbar thumb */
+  }
+  
+  .left-side:hover::-webkit-scrollbar-thumb {
+    background: #555; /* Darker scrollbar on hover */
+  }
+  
