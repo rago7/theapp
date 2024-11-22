@@ -1,33 +1,106 @@
+/* Post Container */
 .post {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .post-content {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .post-stats {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  
-  .post-comments h6 {
-    margin-bottom: 5px;
-    color: #777;
-  }
-  
-  .post-comments p {
-    font-size: 14px;
-    color: #555;
-  }
-  
+  width: 100%; /* Default to take full width of the container */
+  max-width: 600px; /* Limit the width of each post */
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Center the post horizontally if needed */
+}
+
+/* Header Section */
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.post-profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-username {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.post-university {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Content Section */
+.post-content {
+  margin-bottom: 15px;
+}
+
+.post-text {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.post-media {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+/* Footer Section */
+.post-footer {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.post-action-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.post-action-btn:hover {
+  color: #0056b3;
+}
+
+.post-timestamp {
+  font-size: 12px;
+  color: #777;
+  text-align: right;
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+/* .post::-webkit-scrollbar {
+  width: 0; 
+} */
+
+/* Hide scrollbar for Firefox */
+/* .post {
+  scrollbar-width: none;
+} */
+
+/* Optional: If content exceeds the height, ensure scrolling works */
+/* .post:hover {
+  overflow-y: auto;
+} */

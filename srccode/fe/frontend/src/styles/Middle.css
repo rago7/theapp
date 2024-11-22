@@ -1,7 +1,14 @@
 .middle {
-    padding: 20px;
-    background-color: #ffffff;
-    height: 100vh;
-    overflow-y: auto;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center posts horizontally */
+  padding: 20px; /* Add padding around the middle section */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+.middle::-webkit-scrollbar {
+  display: none;
+}
