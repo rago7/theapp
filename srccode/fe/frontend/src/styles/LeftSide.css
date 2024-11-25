@@ -1,39 +1,86 @@
 .left-side {
-    background-color: #f1f3f5;
-    padding: 20px;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: calc(100vh - 70px); /* Full height minus title bar */
+  overflow-y: auto; /* Enable scrolling for overflow content */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Edge (WebKit browsers) */
+.left-side::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Trending Profiles Section */
+.trending-profiles {
+  margin-bottom: 20px;
+}
+
+.trending-profiles h5 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.profiles-list {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  gap: 15px; /* Space between profile cards */
+  max-height: 350px; /* Limit height for large screens */
+  overflow-y: auto; /* Enable scrolling if profiles exceed max height */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+.profiles-list::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome and Safari */
+}
+
+.profile-card {
+  display: flex;
+  align-items: center; /* Align image and text horizontally */
+  gap: 10px; /* Space between image and text */
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.profile-card:hover {
+  transform: scale(1.02); /* Slight zoom on hover */
+  background-color: #e7f3ff; /* Highlight background on hover */
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #007bff; /* Add a colored border */
+}
+
+.profile-name {
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .profiles-list {
+    max-height: 200px; /* Reduce height for medium screens */
   }
-  .info-section {
-    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .profiles-list {
+    max-height: 100px; /* Reduce height for small screens */
   }
-  .additional-section {
-    border-top: 1px solid #ccc;
-    padding-top: 20px;
-  }
-  
-  .left-side {
-    overflow-y: auto; /* Enable scrolling */
-  }
-  
-  .left-side::-webkit-scrollbar {
-    width: 0; /* Hide scrollbar by default */
-  }
-  
-  .left-side:hover::-webkit-scrollbar {
-    width: 8px; /* Show scrollbar on hover */
-  }
-  
-  .left-side::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Scrollbar track background */
-  }
-  
-  .left-side::-webkit-scrollbar-thumb {
-    background: #888; /* Scrollbar thumb color */
-    border-radius: 4px; /* Rounded scrollbar thumb */
-  }
-  
-  .left-side:hover::-webkit-scrollbar-thumb {
-    background: #555; /* Darker scrollbar on hover */
-  }
-  
-  
+}
