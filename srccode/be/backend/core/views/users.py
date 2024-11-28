@@ -4,7 +4,9 @@ from rest_framework import status
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate
 from core.serializers.users import SignupSerializer, LoginSerializer
-from core.models.users import User
+from faker import Faker
+import random
+from django.http import JsonResponse
 
 class SignupView(APIView):
     def post(self, request):
@@ -27,3 +29,22 @@ class LoginView(APIView):
                 return Response({'token': token.key, 'message': 'Login successful!'}, status=status.HTTP_200_OK)
             return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+fake = Faker()
+
+def get_users(request):
+    users = []
+
+    for i in range(10):  # Generate 10 random users
+        user = {
+            "userID": f"user{str(i).zfill(3)}",  # Unique user ID
+            "name": fake.name(),
+            "email": fake.email(),
+            "gender": random.choice(["male", "female"]),
+            "profilePicture": fake.image_url(),  # Placeholder profile picture URL
+            "university": f"University {random.randint(1, 5)}",
+            "verified": random.choice([True, False]),
+        }
+        users.append(user)
+
+    return JsonResponse(users, safe=False)  # Return the users as JSON response

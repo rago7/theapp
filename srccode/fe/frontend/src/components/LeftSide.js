@@ -9,7 +9,7 @@ const LeftSide = () => {
   useEffect(() => {
     const fetchTrendingProfiles = async () => {
       try {
-        const users = await get("/users"); // Fetch users from the fake API
+        const users = await get("/api/users"); // Fetch users from the Django backend
         setTrendingProfiles(users.slice(0, profileLimit)); // Limit profiles
       } catch (error) {
         console.error("Failed to fetch trending profiles:", error);
@@ -39,14 +39,18 @@ const LeftSide = () => {
         <h5>Trending Profiles</h5>
         <div className="profiles-list">
           {trendingProfiles.map((profile) => (
-            <div key={profile.userID} className="profile-card">
+            <div className="profile-card">
               <img
                 src={profile.profilePicture || "https://via.placeholder.com/50"}
                 alt={profile.name}
                 className="profile-picture"
               />
-              <p className="profile-name">{profile.name}</p>
+              <div className="profile-details">
+                <div className="profile-name">{profile.name}</div>
+                <div className="profile-university">{profile.university}</div>
+              </div>
             </div>
+
           ))}
         </div>
       </div>
