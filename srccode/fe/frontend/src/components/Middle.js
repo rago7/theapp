@@ -5,7 +5,7 @@ import Post from "./Post";
 import "./../styles/Middle.css";
 
 const fetchPosts = async () => {
-  return await get("/posts");
+  return await get("/api/posts");
 };
 
 const Middle = () => {

@@ -1,0 +1,31 @@
+.login-signup-page {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-signup-page h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .login-signup-page form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-signup-page input {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .login-signup-page button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  

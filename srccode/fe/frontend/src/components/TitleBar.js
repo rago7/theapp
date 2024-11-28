@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
 import "./../styles/TitleBar.css";
 
 const TitleBar = () => {
+  const { isAuthenticated, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   return (
     <header className="title-bar">
       <div className="top-section">
@@ -25,8 +30,20 @@ const TitleBar = () => {
           </div>
         </div>
         <div className="menu-profile">
-          <button className="btn btn-link">Menu</button>
-          <button className="btn btn-link">Profile</button>
+          {!isAuthenticated ? (
+            <>
+              <button className="btn btn-primary" onClick={() => navigate("/login")}>
+                Login
+              </button>
+              <button className="btn btn-secondary" onClick={() => navigate("/signup")}>
+                Signup
+              </button>
+            </>
+          ) : (
+            <button className="btn btn-danger" onClick={logout}>
+              Logout
+            </button>
+          )}
         </div>
       </div>
     </header>
