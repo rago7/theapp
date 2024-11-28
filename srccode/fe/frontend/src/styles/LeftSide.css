@@ -63,10 +63,24 @@
   border: 2px solid #007bff; /* Add a colored border */
 }
 
+.profile-details {
+  display: flex;
+  flex-direction: column; /* Stack name and university vertically */
+  gap: 5px; /* Add space between name and university */
+}
+
 .profile-name {
   font-size: 14px;
   color: #333;
   font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.profile-university {
+  font-size: 12px; /* Slightly smaller font for university name */
+  color: #777; /* Use a lighter color for university */
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
