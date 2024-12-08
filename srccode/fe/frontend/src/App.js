@@ -5,6 +5,7 @@ import LeftSide from "./components/LeftSide";
 import Middle from "./components/Middle";
 import RightSide from "./components/RightSide";
 import LoginSignupPage from "./pages/LoginSignupPage";
+import Profile from "./components/Profile"; // Import the Profile component
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import "./App.css";
 
@@ -22,7 +23,7 @@ const App = () => {
           {/* Public Route */}
           <Route path="/login" element={<LoginSignupPage />} />
 
-          {/* Protected Route */}
+          {/* Protected Home Page Route */}
           <Route
             path="/"
             element={
@@ -39,6 +40,21 @@ const App = () => {
                     <div className="right-side">
                       <RightSide />
                     </div>
+                  </div>
+                </div>
+              </ProtectedRoute>
+            }
+          />
+
+          {/* Protected Profile Page Route */}
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <div>
+                  <TitleBar /> {/* Keep TitleBar for Profile Page */}
+                  <div className="content">
+                    <Profile /> {/* Render Profile component */}
                   </div>
                 </div>
               </ProtectedRoute>

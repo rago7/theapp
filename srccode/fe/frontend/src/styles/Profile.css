@@ -1,0 +1,112 @@
+/* Profile Container */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: calc(100vh - 70px); /* Account for the title bar */
+    background-color: #f4f4f4;
+  }
+  
+  /* Profile Card */
+  .profile-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  /* Profile Header */
+  .profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+    border: 3px solid #007bff;
+  }
+  
+  .profile-header h2 {
+    font-size: 24px;
+    margin: 5px 0;
+  }
+  
+  .profile-header p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Profile Fields */
+  .profile-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .field {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .field label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .field p,
+  .field input,
+  .field select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Actions */
+  .profile-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .save-btn,
+  .cancel-btn,
+  .edit-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .save-btn {
+    background-color: #28a745;
+  }
+  
+  .cancel-btn {
+    background-color: #dc3545;
+  }
+  
+  .edit-btn {
+    background-color: #007bff;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .profile-fields {
+      grid-template-columns: 1fr; /* Stack fields vertically */
+    }
+  
+    .profile-card {
+      padding: 15px;
+    }
+  }
+  
