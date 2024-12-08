@@ -124,3 +124,49 @@
     gap: 10px;
   }
 }
+
+/* Profile Dropdown */
+.profile-options {
+  position: relative;
+}
+
+.profile-btn {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.profile-options-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  min-width: 150px;
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.profile-option-item {
+  font-size: 14px;
+  padding: 8px 15px;
+  color: #333;
+  text-align: left;
+  cursor: pointer;
+}
+
+.profile-option-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Adjust dropdown responsiveness */
+@media (max-width: 768px) {
+  .profile-options-menu {
+    min-width: 120px;
+    right: 10px;
+  }
+}

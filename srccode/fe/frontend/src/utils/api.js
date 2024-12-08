@@ -9,7 +9,12 @@ const apiClient = axios.create({
 // Generic GET request
 export const get = async (url, params = {}) => {
   try {
-    const response = await apiClient.get(url, { params });
+    let token = localStorage.getItem("token")
+    const response = await apiClient.get(url, { 
+      headers: {
+        Authorization: `Bearer ${token}`, // Add the Bearer token
+      },
+      params });
     return response.data;
   } catch (error) {
     console.error(`GET request to ${url} failed:`, error);
@@ -20,7 +25,13 @@ export const get = async (url, params = {}) => {
 // Generic POST request
 export const post = async (url, data) => {
   try {
-    const response = await apiClient.post(url, data);
+    const token = localStorage.getItem("token");
+    console.log("vsvs", token)
+    const response = await apiClient.post(url, data, {
+      headers: {
+        // Authorization: `Bearer ${token}`, // Add the Bearer token
+      },
+    });
     return response.data;
   } catch (error) {
     console.error(`POST request to ${url} failed:`, error);
@@ -31,7 +42,12 @@ export const post = async (url, data) => {
 // Generic PUT request
 export const put = async (url, data) => {
   try {
-    const response = await apiClient.put(url, data);
+    let token = localStorage.getItem("token")
+    const response = await apiClient.put(url, data, {
+      headers: {
+        Authorization: `Bearer ${token}`, // Add the Bearer token
+      },
+    });
     return response.data;
   } catch (error) {
     console.error(`PUT request to ${url} failed:`, error);
